@@ -1,0 +1,25 @@
+{
+  "project": "העוזרת שלי",
+  "source_of_truth": "GitHub repo",
+  "accounts": {
+    "google_email": "yanivmiz77@gmail.com"
+  },
+  "devices": [
+    {"name": "מחשב סלון", "device_id": "TBD"},
+    {"name": "מחשב חדר", "device_id": "TBD"},
+    {"name": "מחשב נייד", "device_id": "TBD"},
+    {"name": "טלפון נייד (Termux)", "device_id": "TBD"}
+  ],
+  "progress": {
+    "github_truth_repo": 100,
+    "device_registry": 0,
+    "app_ui_rtl": 0,
+    "backend_api": 0,
+    "automations": 0
+  },
+  "next_actions": [
+    "להגדיר device_id לטלפון (Termux) ולרשום אותו בקובץ devices/registry.json",
+    "להוסיף דרישות UI סופיות: שמות כפתורים והסברים בעברית",
+    "להחליט על מקום הרצה רציף (מחשב סלון/חדר/נייד) לשכבת האוטומציה"
+  ]
+}
