@@ -1,30 +1,31 @@
-diff --git a/docs/LIMITATIONS.md b/docs/LIMITATIONS.md
+diff --git a/docs/ISSUE_PATCH_CONVENTION.md b/docs/ISSUE_PATCH_CONVENTION.md
 new file mode 100644
 index 0000000..1111111
 --- /dev/null
-+++ b/docs/LIMITATIONS.md
-@@ -0,0 +1,20 @@
-+# Limitations
++++ b/docs/ISSUE_PATCH_CONVENTION.md
+@@ -0,0 +1,25 @@
++# Issue Patch Convention
 +
-+## Cannot Automate
++## Structure
 +
-+- Editing `.github/workflows/` (protected by design)
-+- Files outside allowlist paths
-+- GitHub account settings (OAuth, billing, PATs)
-+- Repository settings (collaborators, webhooks)
-+- Actions that require human verification
++Every Issue that should trigger automation must:
 +
-+## Can Automate
++1. Have clear title describing the change
++2. Contain natural language description (optional)
++3. Include ONE patch block:
++   \`\`\`patch
++   [your git patch here]
++   \`\`\`
++4. Add label: `assistant:apply`
 +
-+- All files in: `docs/`, `specs/`, `devices/`, `logs/`, `scripts/`
-+- Documentation updates
-+- Status tracking and progress
-+- Device registry management
-+- Specifications evolution
++## Rules
 +
-+## Why These Limits
++- One file per Issue
++- Patch must be valid git format
++- Maximum 30 lines
++- ASCII content preferred
++- Target file must be in allowlist
 +
-+Security first. The automation is intentionally constrained to prevent:
-+- Self-modification of workflows
-+- Privilege escalation
-+- Unauthorized access expansion
++## Example
++
++See Issue #4 (RULES.md creation) for working example.
