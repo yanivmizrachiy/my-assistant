@@ -4,7 +4,7 @@ on:
     types: [labeled]
 permissions:
   contents: write
-  issues: read
+  issues: write
 jobs:
   apply:
     if: >
@@ -31,7 +31,7 @@ jobs:
           set -e
           python - <<'PY'
           import sys
-          allowed=("specs/","devices/","logs/","scripts/",".github/","docs/")
+          allowed=("specs/","devices/","logs/","scripts/","docs/")
           for line in open("issue.patch","r",encoding="utf-8").read().splitlines():
             if line.startswith(("+++ b/","--- a/")):
               path=line.split(" ",1)[1].strip().replace("a/","",1).replace("b/","",1)
@@ -51,3 +51,11 @@ jobs:
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "assistant: apply changes from issue #${{ github.event.issue.number }}"
           git push
+      - name: Comment & Close
+        if: success()
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          gh issue comment "$ISSUE_NUMBER" --body "✅ Applied! Commit: $GITHUB_SHA"
+          gh issue close "$ISSUE_NUMBER" --reason completed
