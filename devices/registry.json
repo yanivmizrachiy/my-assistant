@@ -1,0 +1,9 @@
+{
+  "owner_email": "yanivmiz77@gmail.com",
+  "devices": [
+    { "device_name_he": "טלפון נייד", "device_id": "termux-phone", "device_type": "mobile", "os": "android+termux", "active": true },
+    { "device_name_he": "מחשב סלון", "device_id": "pc-salon", "device_type": "desktop", "os": "windows", "active": true },
+    { "device_name_he": "מחשב חדר", "device_id": "pc-room", "device_type": "desktop", "os": "windows", "active": true },
+    { "device_name_he": "מחשב נייד", "device_id": "laptop", "device_type": "laptop", "os": "windows", "active": true }
+  ]
+}
