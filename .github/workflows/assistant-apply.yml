@@ -1,0 +1,53 @@
+name: Assistant Apply (Issue -> Commit)
+on:
+  issues:
+    types: [labeled]
+permissions:
+  contents: write
+  issues: read
+jobs:
+  apply:
+    if: >
+      github.event.label.name == 'assistant:apply'
+      && github.event.issue.user.login == github.repository_owner
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Extract patch
+        run: |
+          set -e
+          python - <<'PY'
+          import re, json, os, sys
+          ev = json.load(open(os.environ["GITHUB_EVENT_PATH"], "r", encoding="utf-8"))
+          txt = ev["issue"]["body"] or ""
+          m = re.search(r"```patch\n(.*?)\n```", txt, re.S)
+          if not m: sys.exit("No ```patch block found")
+          patch = m.group(1).strip() + "\n"
+          if len(patch) < 10: sys.exit("Patch too small")
+          open("issue.patch","w",encoding="utf-8").write(patch)
+          PY
+      - name: Allowlist
+        run: |
+          set -e
+          python - <<'PY'
+          import sys
+          allowed=("specs/","devices/","logs/","scripts/",".github/","docs/")
+          for line in open("issue.patch","r",encoding="utf-8").read().splitlines():
+            if line.startswith(("+++ b/","--- a/")):
+              path=line.split(" ",1)[1].strip().replace("a/","",1).replace("b/","",1)
+              if path!="/dev/null" and not path.startswith(allowed):
+                sys.exit("BLOCKED path: "+path)
+          PY
+      - name: Apply
+        run: |
+          set -e
+          git apply --whitespace=nowarn issue.patch
+      - name: Commit & push
+        run: |
+          set -e
+          git config user.name "assistant-bot"
+          git config user.email "assistant-bot@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "assistant: apply changes from issue #${{ github.event.issue.number }}"
+          git push
