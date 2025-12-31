@@ -1,31 +1,21 @@
-diff --git a/docs/ISSUE_PATCH_CONVENTION.md b/docs/ISSUE_PATCH_CONVENTION.md
+diff --git a/docs/RULES.md b/docs/RULES.md
 new file mode 100644
 index 0000000..1111111
 --- /dev/null
-+++ b/docs/ISSUE_PATCH_CONVENTION.md
-@@ -0,0 +1,25 @@
-+# Issue Patch Convention
++++ b/docs/RULES.md
+@@ -0,0 +1,15 @@
++# Rules (NL -> Patch)
 +
-+## Structure
++Controlled by GitHub Issues with patch block.
 +
-+Every Issue that should trigger automation must:
++## Allowed paths
++- docs/, specs/, devices/, logs/, scripts/
 +
-+1. Have clear title describing the change
-+2. Contain natural language description (optional)
-+3. Include ONE patch block:
-+   \`\`\`patch
-+   [your git patch here]
-+   \`\`\`
-+4. Add label: `assistant:apply`
++## Hard limits
++- Patch <= 30 lines
++- ASCII preferred
++- One change per issue
 +
-+## Rules
-+
-+- One file per Issue
-+- Patch must be valid git format
-+- Maximum 30 lines
-+- ASCII content preferred
-+- Target file must be in allowlist
-+
-+## Example
-+
-+See Issue #4 (RULES.md creation) for working example.
++## Forbidden
++- Changes under .github/ (protected)
++- Paths outside allowlist
