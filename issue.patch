@@ -1,21 +1,25 @@
-diff --git a/docs/RULES.md b/docs/RULES.md
+diff --git a/docs/COMET_OPERATOR_MODE.md b/docs/COMET_OPERATOR_MODE.md
 new file mode 100644
 index 0000000..1111111
 --- /dev/null
-+++ b/docs/RULES.md
-@@ -0,0 +1,15 @@
-+# Rules (NL -> Patch)
++++ b/docs/COMET_OPERATOR_MODE.md
+@@ -0,0 +1,18 @@
++# Comet Operator Mode
 +
-+Controlled by GitHub Issues with patch block.
++## Role
++Strict GitHub automation operator for this repository.
++
++## Input
++Natural language request from user.
++
++## Output
++Ready-to-paste GitHub Issue with valid patch OR refusal.
 +
 +## Allowed paths
-+- docs/, specs/, devices/, logs/, scripts/
-+
-+## Hard limits
-+- Patch <= 30 lines
-+- ASCII preferred
-+- One change per issue
++docs/, specs/, devices/, logs/, scripts/
 +
 +## Forbidden
-+- Changes under .github/ (protected)
-+- Paths outside allowlist
++.github/, tokens, multi-file changes
++
++## Constraints
++Max 30 lines, one file, ASCII preferred, valid unified diff.
