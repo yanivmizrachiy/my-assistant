@@ -1,34 +1,36 @@
-diff --git a/specs/SYSTEM_ARCHITECTURE.md b/specs/SYSTEM_ARCHITECTURE.md
+diff --git a/specs/CREDENTIALS_STRUCTURE.md b/specs/CREDENTIALS_STRUCTURE.md
 new file mode 100644
 index 0000000..1111111
 --- /dev/null
-+++ b/specs/SYSTEM_ARCHITECTURE.md
-@@ -0,0 +1,28 @@
-+# System Architecture - Unified Information Hub
++++ b/specs/CREDENTIALS_STRUCTURE.md
+@@ -0,0 +1,30 @@
++# Credentials Structure - Secure Vault Design
 +
-+## Vision
-+Centralized system for managing all accounts, devices, credentials, and data across platforms.
++## Security Policy
++CRITICAL: NO actual passwords/tokens in public GitHub repo.
++This file defines STRUCTURE only.
 +
-+## Core Components
++## Storage Strategy
++- Structure: GitHub (public)
++- Actual secrets: Local encrypted files (NOT in repo)
++- Reference: Use placeholder paths only
 +
-+### 1. Accounts Hub
-+- Microsoft Account (yanivmiz77@gmail.com)
-+- Google Account (yanivmiz77@gmail.com)
-+- GitHub Account (yanivmizrachiy)
-+- Termux Environment
++## Accounts Registry Structure
 +
-+### 2. Devices Registry
-+- Mobile: Samsung Galaxy Ultra
-+- Desktop 1: Living Room PC
-+- Desktop 2: Bedroom PC
-+- Laptop: Portable PC
++### Microsoft Account
++- Email: yanivmiz77@gmail.com
++- Services: Office 365, OneDrive, Outlook
++- Auth: OAuth tokens (encrypted locally)
 +
-+### 3. Data Storage
-+- specs/: System specifications
-+- devices/: Device configurations
-+- docs/: Documentation
-+- logs/: Activity logs
++### Google Account
++- Email: yanivmiz77@gmail.com
++- Services: Gmail, Drive, Calendar
++- Auth: OAuth tokens (encrypted locally)
 +
-+### 4. Control Method
-+- GitHub Issues (mobile-first)
-+- Automated workflows (assistant-bot)
++### GitHub Account
++- Username: yanivmizrachiy
++- Repo: my-assistant
++- Auth: Personal Access Tokens (local only)
++
++## Next Steps
++Create encrypted vault in Termux (local device only)
