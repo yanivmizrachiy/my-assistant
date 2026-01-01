@@ -7,6 +7,8 @@ TS="$(date +%Y-%m-%dT%H:%M:%S%z)"
 LOG="logs/TERMUX_AGENT.ndjson"
 mkdir -p logs
 
+./sync/decision_check.sh "$REPO" >/dev/null
+
 echo "{\"ts\":\"$TS\",\"type\":\"agent_run\",\"device\":\"PHONE_SM-S928B_e3q\",\"step\":\"pull_start\"}" >> "$LOG"
 git pull --rebase >/dev/null
 echo "{\"ts\":\"$TS\",\"type\":\"agent_run\",\"device\":\"PHONE_SM-S928B_e3q\",\"step\":\"pull_ok\"}" >> "$LOG"
