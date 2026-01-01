@@ -1,13 +1,33 @@
-diff --git a/logs/CYCLE_002.ndjson b/logs/CYCLE_002.ndjson
+diff --git a/docs/OPERATION_PLAYBOOK.md b/docs/OPERATION_PLAYBOOK.md
 new file mode 100644
 index 0000000..1111111
 --- /dev/null
-+++ b/logs/CYCLE_002.ndjson
-@@ -0,0 +1,7 @@
-+{"cycle":2,"timestamp":"2026-01-01T14:00Z","phase":"memory_hardening","action":"create_state_snapshot","target":"docs/STATE_SNAPSHOT.md","status":"success"}
-+{"cycle":2,"decision_rationale":"canonical_system_state_baseline","gpt_sync_enabled":true,"autonomous_reference":true}
-+{"cycle":2,"repository_analysis":"complete","existing_docs":7,"duplication_check":"passed"}
-+{"cycle":2,"issue":25,"patch_lines":28,"loc":21,"bytes":1019,"format":"markdown","sections":3}
-+{"cycle":2,"security":"passed","allowlist":"docs/","operation":"CREATE","credentials":"none","forbidden_paths":0}
-+{"cycle":2,"automation":"success","workflow_trigger":"instant","commit":"auto","issue_close":"auto","error_count":0}
-+{"cycle":2,"confidence":98,"mastery":["patch_format","workflow","create_ops","autonomous_decision"],"next_cycle":3,"next_target":"logs/CYCLE_003.ndjson"}
++++ b/docs/OPERATION_PLAYBOOK.md
+@@ -0,0 +1,23 @@
++# Operation Playbook
++
++## What You Write
++
++"Create weekly summary" | "Add to shopping list" | "Log meeting notes"
++
++Write naturally (Hebrew/English). No syntax required.
++
++## What System Decides
++
++File path, format, structure, commit message — automatic.
++
++## What Happens
++
++1. Create Issue + label `assistant:apply`
++2. System: patch → commit → close (30-90s)
++3. You get: file in repo + logs in `logs/CYCLE_*.ndjson`
++
++## Boundaries
++
++❌ No `.github/` mods | No credentials | No shell | No UPDATEs (CREATE only)
++
++## Usage Patterns
++
++**Daily**: Morning tasks → notes → evening summary
++**Weekly**: Monday plan → Friday review
++**Anytime**: Lists, logs, device updates
