@@ -1,25 +1,34 @@
-diff --git a/docs/COMET_OPERATOR_MODE.md b/docs/COMET_OPERATOR_MODE.md
+diff --git a/specs/SYSTEM_ARCHITECTURE.md b/specs/SYSTEM_ARCHITECTURE.md
 new file mode 100644
 index 0000000..1111111
 --- /dev/null
-+++ b/docs/COMET_OPERATOR_MODE.md
-@@ -0,0 +1,18 @@
-+# Comet Operator Mode
++++ b/specs/SYSTEM_ARCHITECTURE.md
+@@ -0,0 +1,28 @@
++# System Architecture - Unified Information Hub
 +
-+## Role
-+Strict GitHub automation operator for this repository.
++## Vision
++Centralized system for managing all accounts, devices, credentials, and data across platforms.
 +
-+## Input
-+Natural language request from user.
++## Core Components
 +
-+## Output
-+Ready-to-paste GitHub Issue with valid patch OR refusal.
++### 1. Accounts Hub
++- Microsoft Account (yanivmiz77@gmail.com)
++- Google Account (yanivmiz77@gmail.com)
++- GitHub Account (yanivmizrachiy)
++- Termux Environment
 +
-+## Allowed paths
-+docs/, specs/, devices/, logs/, scripts/
++### 2. Devices Registry
++- Mobile: Samsung Galaxy Ultra
++- Desktop 1: Living Room PC
++- Desktop 2: Bedroom PC
++- Laptop: Portable PC
 +
-+## Forbidden
-+.github/, tokens, multi-file changes
++### 3. Data Storage
++- specs/: System specifications
++- devices/: Device configurations
++- docs/: Documentation
++- logs/: Activity logs
 +
-+## Constraints
-+Max 30 lines, one file, ASCII preferred, valid unified diff.
++### 4. Control Method
++- GitHub Issues (mobile-first)
++- Automated workflows (assistant-bot)
