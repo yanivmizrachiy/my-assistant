@@ -1,36 +1,36 @@
-diff --git a/specs/CREDENTIALS_STRUCTURE.md b/specs/CREDENTIALS_STRUCTURE.md
+diff --git a/devices/DEVICES_FULL_SPECS.md b/devices/DEVICES_FULL_SPECS.md
 new file mode 100644
 index 0000000..1111111
 --- /dev/null
-+++ b/specs/CREDENTIALS_STRUCTURE.md
-@@ -0,0 +1,30 @@
-+# Credentials Structure - Secure Vault Design
++++ b/devices/DEVICES_FULL_SPECS.md
+@@ -0,0 +1,29 @@
++# Complete Devices Inventory
 +
-+## Security Policy
-+CRITICAL: NO actual passwords/tokens in public GitHub repo.
-+This file defines STRUCTURE only.
++## Device 1: Mobile Phone
++- Model: Samsung Galaxy Ultra
++- OS: Android
++- Primary Use: Mobile control hub
++- Apps: GitHub mobile, Termux, Microsoft apps, Google apps
++- Device ID: termux-cdFaecaeceeFaeda
++- Status: Active, primary control device
 +
-+## Storage Strategy
-+- Structure: GitHub (public)
-+- Actual secrets: Local encrypted files (NOT in repo)
-+- Reference: Use placeholder paths only
++## Device 2: Living Room PC
++- Model: Desktop PC
++- OS: Windows
++- Primary Use: Main workstation
++- Device ID: TBD (to be configured)
++- Status: Pending setup
 +
-+## Accounts Registry Structure
++## Device 3: Bedroom PC
++- Model: Desktop PC
++- OS: Windows
++- Primary Use: Secondary workstation
++- Device ID: TBD (to be configured)
++- Status: Pending setup
 +
-+### Microsoft Account
-+- Email: yanivmiz77@gmail.com
-+- Services: Office 365, OneDrive, Outlook
-+- Auth: OAuth tokens (encrypted locally)
-+
-+### Google Account
-+- Email: yanivmiz77@gmail.com
-+- Services: Gmail, Drive, Calendar
-+- Auth: OAuth tokens (encrypted locally)
-+
-+### GitHub Account
-+- Username: yanivmizrachiy
-+- Repo: my-assistant
-+- Auth: Personal Access Tokens (local only)
-+
-+## Next Steps
-+Create encrypted vault in Termux (local device only)
++## Device 4: Portable Laptop
++- Model: Laptop PC
++- OS: Windows
++- Primary Use: Mobile productivity
++- Device ID: TBD (to be configured)
++- Status: Pending setup
