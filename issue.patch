@@ -1,33 +1,37 @@
-diff --git a/docs/OPERATION_PLAYBOOK.md b/docs/OPERATION_PLAYBOOK.md
+diff --git a/devices/DEVICE_OPERATIONS.md b/devices/DEVICE_OPERATIONS.md
 new file mode 100644
 index 0000000..1111111
 --- /dev/null
-+++ b/docs/OPERATION_PLAYBOOK.md
-@@ -0,0 +1,23 @@
-+# Operation Playbook
++++ b/devices/DEVICE_OPERATIONS.md
+@@ -0,0 +1,24 @@
++# Device Operations
 +
-+## What You Write
++## Samsung Galaxy Ultra (termux-cdfaecaeceefaeda)
 +
-+"Create weekly summary" | "Add to shopping list" | "Log meeting notes"
++**Role**: Primary control hub  
++**Allowed**: All Issue creation, label management, mobile-first operations  
++**Forbidden**: None (primary device)
 +
-+Write naturally (Hebrew/English). No syntax required.
++## Living Room PC (pc-salon)
 +
-+## What System Decides
++**Role**: Media & web access  
++**Allowed**: Read repository, view docs, check status  
++**Forbidden**: Issue creation without phone verification
 +
-+File path, format, structure, commit message — automatic.
++## Bedroom PC (pc-room)
 +
-+## What Happens
++**Role**: Development work  
++**Allowed**: Read repository, local development, testing  
++**Forbidden**: Direct production commits
 +
-+1. Create Issue + label `assistant:apply`
-+2. System: patch → commit → close (30-90s)
-+3. You get: file in repo + logs in `logs/CYCLE_*.ndjson`
++## Laptop (laptop)
 +
-+## Boundaries
++**Role**: Mobile productivity  
++**Allowed**: Read repository, quick edits, status checks  
++**Forbidden**: Critical system changes
 +
-+❌ No `.github/` mods | No credentials | No shell | No UPDATEs (CREATE only)
++## Account Context
 +
-+## Usage Patterns
-+
-+**Daily**: Morning tasks → notes → evening summary
-+**Weekly**: Monday plan → Friday review
-+**Anytime**: Lists, logs, device updates
++**Google (yanivmiz77@gmail.com)**: Owner identity, document access, calendar ops  
++**Microsoft**: Office integration, email operations  
++**GitHub (yanivmizrachiy)**: Exclusive automation control layer
