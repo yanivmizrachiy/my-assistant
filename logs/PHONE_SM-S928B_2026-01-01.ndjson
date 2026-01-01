@@ -1,0 +1,3 @@
+{"ts":"2026-01-01T19:52:38+02:00","type":"snapshot","scope":"phone","id":"PHONE_SM-S928B_2026-01-01","path":"devices/PHONE_SM-S928B_2026-01-01_TERMUX_PROFILE.json","status":"created"}
+{"ts":"2026-01-01T19:52:38+02:00","type":"summary","path":"reports/phone/PHONE_SM-S928B_2026-01-01_SUMMARY.md","status":"created"}
+{"ts":"2026-01-01T19:52:38+02:00","type":"note","msg":"ip/dns/route were empty in capture"}

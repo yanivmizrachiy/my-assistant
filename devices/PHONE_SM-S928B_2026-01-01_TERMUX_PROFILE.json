@@ -1,0 +1,18 @@
+{
+  "report_type": "PHONE_REPORT_SAFE_TERMUX",
+  "captured_at_local": "Thu Jan  1 19:52:38 IST 2026",
+  "device": { "manufacturer": "samsung", "model": "SM-S928B", "device": "e3q", "name": "e3qxxx" },
+  "android": { "version_release": "16", "sdk": "36", "build_id": "BP2A.250605.031.A3" },
+  "build_fingerprint": "samsung/e3qxxx/e3q:16/BP2A.250605.031.A3/S928BXXS4CYK8:user/release-keys",
+  "hardware": { "ro_hardware": "qcom", "board_platform": "pineapple" },
+  "kernel": {
+    "uname": "Linux localhost 6.1.128-android14-11-31999054-abS928BXXS4CYK8 #1 SMP PREEMPT Fri Nov 28 04:55:51 UTC 2025 aarch64 Android",
+    "arch": "aarch64",
+    "abi": "arm64-v8a",
+    "abilist": "arm64-v8a"
+  },
+  "memory_kb": { "mem_total": 11351852, "mem_available": 2164500, "swap_total": 12582908, "swap_free": 3233604 },
+  "storage_main": { "data_size_gb": 222, "data_used_gb": 121, "data_avail_gb": 101, "data_use_percent": 55 },
+  "termux": { "version": "googleplay.2025.10.05", "termux_tools": "3.0.8", "packages_arch": "aarch64", "installed_pkg_count": 399 },
+  "network_note": "ip/dns/route sections were empty in this capture (permissions/session output)."
+}
