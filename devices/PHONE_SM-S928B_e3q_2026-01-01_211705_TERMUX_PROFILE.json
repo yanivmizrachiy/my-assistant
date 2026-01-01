@@ -1,0 +1,22 @@
+{
+  "report_type": "PHONE_SNAPSHOT_TERMUX_AUTOGEN",
+  "captured_at": "2026-01-01T21:17:05+0200",
+  "device": {
+    "manufacturer": "samsung",
+    "model": "SM-S928B",
+    "device": "e3q",
+    "name": "e3qxxx"
+  },
+  "android": {
+    "version_release": "16",
+    "sdk": "36",
+    "build_id": "BP2A.250605.031.A3"
+  },
+  "build_fingerprint": "samsung/e3qxxx/e3q:16/BP2A.250605.031.A3/S928BXXS4CYK8:user/release-keys",
+  "hardware": { "ro_hardware": "qcom", "board_platform": "pineapple" },
+  "kernel": { "uname": "Linux localhost 6.1.128-android14-11-31999054-abS928BXXS4CYK8 #1 SMP PREEMPT Fri Nov 28 04:55:51 UTC 2025 aarch64 Android" },
+  "memory_kb": { "mem_total": 11351852, "mem_available": 3004172, "swap_total": 12582908, "swap_free": 8023532 },
+  "storage_data_df_h": "222G 121G 101G 55%",
+  "termux": { "installed_pkg_count": 399 },
+  "network": { "dns1": "", "dns2": "" }
+}
