@@ -1,0 +1,5 @@
+{"cycle":1,"timestamp":"2026-01-01T13:00Z","action":"learn_format","status":"success"}
+{"cycle":1,"timestamp":"2026-01-01T13:10Z","action":"create_log","status":"retry","reason":"missing_markdown_fence"}
+{"cycle":1,"security":"passed","path":"logs/","operation":"CREATE"}
+{"cycle":1,"operator":"comet","mode":"autonomous","supervisor":"gpt"}
+{"cycle":1,"confidence":80,"next":"docs/STATE_SNAPSHOT.md"}
