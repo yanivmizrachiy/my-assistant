@@ -1,0 +1,37 @@
+{
+  "schema": "device_registry.v1",
+  "devices": [
+    {
+      "device_id": "PHONE_SM-S928B_e3q",
+      "label": "Galaxy Ultra (Primary Hub)",
+      "platform": "android/termux",
+      "trust_level": "high",
+      "allowed": ["git_sync", "device_snapshot", "automation_runner"],
+      "forbidden": ["store_secrets_in_repo"]
+    },
+    {
+      "device_id": "PC_LIVING_ROOM",
+      "label": "Living Room PC",
+      "platform": "windows",
+      "trust_level": "low",
+      "allowed": ["read_only", "view_reports"],
+      "forbidden": ["push_to_main_without_phone_gate"]
+    },
+    {
+      "device_id": "PC_BEDROOM",
+      "label": "Bedroom PC",
+      "platform": "windows",
+      "trust_level": "medium",
+      "allowed": ["dev_sandbox", "prepare_changes"],
+      "forbidden": ["direct_production_changes_without_review"]
+    },
+    {
+      "device_id": "LAPTOP",
+      "label": "Laptop",
+      "platform": "windows",
+      "trust_level": "medium",
+      "allowed": ["read_access", "prepare_changes"],
+      "forbidden": ["secrets_export"]
+    }
+  ]
+}
