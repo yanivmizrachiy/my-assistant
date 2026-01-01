@@ -1,0 +1,3 @@
+{"ts":"2026-01-01T21:35:31+0200","type":"agent_run","device":"PHONE_SM-S928B_e3q","step":"pull_start"}
+{"ts":"2026-01-01T21:35:31+0200","type":"agent_run","device":"PHONE_SM-S928B_e3q","step":"pull_ok"}
+{"ts":"2026-01-01T21:35:31+0200","type":"agent_run","device":"PHONE_SM-S928B_e3q","step":"snapshot_ok"}
