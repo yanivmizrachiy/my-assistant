@@ -3,11 +3,19 @@
 
 <div dir="rtl">
 
+## 🚀 התחלה מהירה
+
+**מתחילים כאן?** ראה את [המדריך להתחלה מהירה](QUICKSTART.md)
+
 ## תיאור המערכת
 
 זהו הריפו המרכזי והמושקע שלי לאתר ומערכת לניהול תלמידים. המערכת מאפשרת ניהול מקיף של תלמידים, מעקב אחר נוכחות, ציונים, והתקדמות לימודית.
 
 </div>
+
+## 🚀 Quick Start
+
+**Getting started?** See the [Quick Start Guide](QUICKSTART.md)
 
 ## System Description
 
