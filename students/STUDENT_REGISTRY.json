@@ -1,0 +1,18 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2026-01-26T21:45:54Z",
+  "students": [
+    {
+      "student_id": "STU-2026-0001",
+      "name": "דנה כהן",
+      "email": "dana.cohen@test.edu",
+      "status": "active",
+      "enrollment_date": "2026-01-26T21:45:54Z"
+    }
+  ],
+  "metadata": {
+    "total_students": 1,
+    "active_students": 1,
+    "schema_version": "1.0"
+  }
+}
