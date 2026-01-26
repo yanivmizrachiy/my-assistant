@@ -90,8 +90,8 @@ else
     RESULTS=$(jq -r --arg query "$QUERY" --arg status "$STATUS" '
         .students[] | 
         select(
-            ((.name | ascii_downcase | contains($query | ascii_downcase)) or 
-             (.email | ascii_downcase | contains($query | ascii_downcase))) and
+            ((.name | tostring | test($query; "i")) or 
+             (.email | tostring | test($query; "i"))) and
             (if $status != "" then .status == $status else true end)
         ) | 
         "\(.student_id)|\(.name)|\(.email)|\(.status)"

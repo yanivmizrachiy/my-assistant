@@ -94,6 +94,12 @@ CURRENT_COUNT=$(jq '.metadata.total_students' "$REGISTRY_FILE")
 NEXT_NUM=$((CURRENT_COUNT + 1))
 STUDENT_ID=$(printf "STU-%s-%04d" "$YEAR" "$NEXT_NUM")
 
+# Check if student ID already exists
+while [[ -f "${PROFILES_DIR}/${STUDENT_ID}.json" ]]; do
+    NEXT_NUM=$((NEXT_NUM + 1))
+    STUDENT_ID=$(printf "STU-%s-%04d" "$YEAR" "$NEXT_NUM")
+done
+
 # Get current timestamp
 TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
 ENROLL_DATE=$(date +"%Y-%m-%d")
@@ -142,23 +148,29 @@ cat > "$PROFILE_FILE" <<EOF
 EOF
 
 # Update registry
-jq --arg student_id "$STUDENT_ID" \
-   --arg first_name "$FIRST_NAME" \
-   --arg last_name "$LAST_NAME" \
-   --arg email "$EMAIL" \
-   --arg status "active" \
-   --arg timestamp "$TIMESTAMP" \
-   '.students += [{
-       "student_id": $student_id,
-       "name": ($first_name + " " + $last_name),
-       "email": $email,
-       "status": $status,
-       "enrollment_date": $timestamp
-   }] | 
-   .metadata.total_students += 1 | 
-   .metadata.active_students += 1 | 
-   .last_updated = $timestamp' \
-   "$REGISTRY_FILE" > "${REGISTRY_FILE}.tmp" && mv "${REGISTRY_FILE}.tmp" "$REGISTRY_FILE"
+if jq --arg student_id "$STUDENT_ID" \
+      --arg first_name "$FIRST_NAME" \
+      --arg last_name "$LAST_NAME" \
+      --arg email "$EMAIL" \
+      --arg status "active" \
+      --arg timestamp "$TIMESTAMP" \
+      '.students += [{
+          "student_id": $student_id,
+          "name": ($first_name + " " + $last_name),
+          "email": $email,
+          "status": $status,
+          "enrollment_date": $timestamp
+      }] | 
+      .metadata.total_students += 1 | 
+      .metadata.active_students += 1 | 
+      .last_updated = $timestamp' \
+      "$REGISTRY_FILE" > "${REGISTRY_FILE}.tmp"; then
+    mv "${REGISTRY_FILE}.tmp" "$REGISTRY_FILE"
+else
+    rm -f "${REGISTRY_FILE}.tmp"
+    echo -e "${RED}שגיאה בעדכון רישום / Error updating registry${NC}"
+    exit 1
+fi
 
 echo -e "${GREEN}✓ התלמיד נוצר בהצלחה / Student created successfully!${NC}"
 echo -e "${GREEN}Profile saved to: $PROFILE_FILE${NC}"

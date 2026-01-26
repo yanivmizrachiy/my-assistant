@@ -123,7 +123,5 @@ LOG_FILE="${REPO_ROOT}/logs/student_operations.log"
 mkdir -p "${REPO_ROOT}/logs"
 echo "$(date -u +"%Y-%m-%d %H:%M:%S UTC") | DEVICE: $DEVICE_ID | ACTION: RECORD_ATTENDANCE | STUDENT_ID: $STUDENT_ID | COURSE: $COURSE_ID | STATUS: $STATUS | RESULT: SUCCESS" >> "$LOG_FILE"
 
-# Update student profile attendance rate
-# This is a simplified calculation - in a real system, you'd calculate properly
-echo -e "${YELLOW}עדכון פרופיל תלמיד / Updating student profile...${NC}"
-# Note: This would need more complex logic to properly calculate attendance rate
+# Note: Attendance rate calculation would require aggregating all attendance records
+# and updating the student profile - this is a future enhancement

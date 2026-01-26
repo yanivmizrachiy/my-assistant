@@ -1,1 +1,7 @@
 *.bak.*
+
+# Student data - keep structure but ignore test/demo data
+# Uncomment these lines to exclude actual student data from commits
+# students/profiles/*.json
+# students/attendance/**/*.json
+# students/grades/**/*.json
